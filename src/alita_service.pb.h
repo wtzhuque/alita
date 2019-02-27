@@ -110,12 +110,27 @@ class Request : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // accessors -------------------------------------------------------
 
+  // required bytes msg = 1;
+  bool has_msg() const;
+  void clear_msg();
+  static const int kMsgFieldNumber = 1;
+  const ::std::string& msg() const;
+  void set_msg(const ::std::string& value);
+  void set_msg(const char* value);
+  void set_msg(const void* value, size_t size);
+  ::std::string* mutable_msg();
+  ::std::string* release_msg();
+  void set_allocated_msg(::std::string* msg);
+
   // @@protoc_insertion_point(class_scope:alita.Request)
  private:
+  inline void set_has_msg();
+  inline void clear_has_msg();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr msg_;
   friend void  protobuf_AddDesc_alita_5fservice_2eproto();
   friend void protobuf_AssignDesc_alita_5fservice_2eproto();
   friend void protobuf_ShutdownFile_alita_5fservice_2eproto();
@@ -200,14 +215,14 @@ class Response : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::google::protobuf::int32 error() const;
   void set_error(::google::protobuf::int32 value);
 
-  // required string msg = 2;
+  // required bytes msg = 2;
   bool has_msg() const;
   void clear_msg();
   static const int kMsgFieldNumber = 2;
   const ::std::string& msg() const;
   void set_msg(const ::std::string& value);
   void set_msg(const char* value);
-  void set_msg(const char* value, size_t size);
+  void set_msg(const void* value, size_t size);
   ::std::string* mutable_msg();
   ::std::string* release_msg();
   void set_allocated_msg(::std::string* msg);
@@ -301,6 +316,60 @@ class AlitaService_Stub : public AlitaService {
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
 // Request
 
+// required bytes msg = 1;
+inline bool Request::has_msg() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Request::set_has_msg() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Request::clear_has_msg() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Request::clear_msg() {
+  msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_msg();
+}
+inline const ::std::string& Request::msg() const {
+  // @@protoc_insertion_point(field_get:alita.Request.msg)
+  return msg_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Request::set_msg(const ::std::string& value) {
+  set_has_msg();
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:alita.Request.msg)
+}
+inline void Request::set_msg(const char* value) {
+  set_has_msg();
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:alita.Request.msg)
+}
+inline void Request::set_msg(const void* value, size_t size) {
+  set_has_msg();
+  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:alita.Request.msg)
+}
+inline ::std::string* Request::mutable_msg() {
+  set_has_msg();
+  // @@protoc_insertion_point(field_mutable:alita.Request.msg)
+  return msg_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Request::release_msg() {
+  // @@protoc_insertion_point(field_release:alita.Request.msg)
+  clear_has_msg();
+  return msg_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Request::set_allocated_msg(::std::string* msg) {
+  if (msg != NULL) {
+    set_has_msg();
+  } else {
+    clear_has_msg();
+  }
+  msg_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), msg);
+  // @@protoc_insertion_point(field_set_allocated:alita.Request.msg)
+}
+
 // -------------------------------------------------------------------
 
 // Response
@@ -329,7 +398,7 @@ inline void Response::set_error(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:alita.Response.error)
 }
 
-// required string msg = 2;
+// required bytes msg = 2;
 inline bool Response::has_msg() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -357,7 +426,7 @@ inline void Response::set_msg(const char* value) {
   msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:alita.Response.msg)
 }
-inline void Response::set_msg(const char* value, size_t size) {
+inline void Response::set_msg(const void* value, size_t size) {
   set_has_msg();
   msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

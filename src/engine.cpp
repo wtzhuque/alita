@@ -6,12 +6,18 @@
 
 #include "engine.h"
 
-namespace alita {
-
-Engine::Engine() {
+namespace {
+	static alita::Engine* g_instance = nullptr;
 }
 
-Engine::~Engine() {
+namespace alita {
+
+Engine* Engine::instance() {
+	if (__builtin_expect(g_instance == nullptr, 0)) {
+		g_instance = new Engine();
+	}
+
+	return g_instance;
 }
 
 int Engine::init() {
@@ -19,6 +25,11 @@ int Engine::init() {
 }
 
 int Engine::destroy() {
+	return 0;
+}
+
+int Engine::handle(const std::string& string, std::string* res) {
+	res->assign(string);
 	return 0;
 }
 

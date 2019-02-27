@@ -6,6 +6,8 @@
 
 #include "service.h"
 
+#include <brpc/server.h>
+
 #include "engine.h"
 
 namespace alita {
@@ -24,10 +26,14 @@ int ServiceImpl::destroy() {
 	return 0;
 }
 
-void ServiceImpl::query(::google::protobuf::RpcController* controller,
+void ServiceImpl::query(::google::protobuf::RpcController* cntl_base,
                         const ::alita::Request* request,
                         ::alita::Response* response,
                         ::google::protobuf::Closure* done) {
+    brpc::ClosureGuard done_guard(done);
+    brpc::Controller* cntl = static_cast<brpc::Controller*>(cntl_base);
+
+	Engine* engine = Engine::instance();
 }
 
 } // namespace alita

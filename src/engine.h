@@ -3,18 +3,29 @@
 // Author: wtzhuque@163.com                               
 // Description: Alita Engine
 //**********************************************************
+#pragma once
+
+#include <string>
 
 namespace alita {
 
 class Engine {
 public:
-	Engine();
+	static Engine* instance();
 
-	~Engine();
-
+public:
 	int init();
 
 	int destroy();
+
+	int handle(const std::string& msg, std::string* res);
+	
+public:
+	~Engine() {}
+
+private:
+	Engine() {}
+	Engine(const Engine&) {}
 }; // class Engine
 
 } // namespace alita

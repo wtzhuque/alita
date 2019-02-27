@@ -9,6 +9,7 @@
 #include <brpc/server.h>
 
 #include "service.h"
+#include "engine.h"
 
 DEFINE_int32(port, 8000, "TCP Port of this server");
 DEFINE_int32(idle_timeout_s, -1, "Connection will be closed if there is no "
@@ -19,8 +20,15 @@ namespace alita {
 int run(int argc, char** argv) {
     google::ParseCommandLineFlags(&argc, &argv, true);
 
+	Engine* engine = Engine::instance();
+	int ret = engine->init();
+	if (ret != 0) {
+		LOG(ERROR) << "Failed to init engine"; 
+		return ret;
+	}
+
 	ServiceImpl impl;
-	int ret = impl.init();
+	ret = impl.init();
 	if (ret != 0) {
 		LOG(ERROR) << "Failed to init service"; 
 		return ret;
@@ -40,8 +48,12 @@ int run(int argc, char** argv) {
         return -1;
     }
 
-    // Wait until Ctrl-C is pressed, then Stop() and Join() the server.
     server.RunUntilAskedToQuit();
+
+	ret = engine->destroy();
+	if (ret != 0) {
+		LOG(WARNING) << "Failed to destroy engine";
+	}
 	return 0;
 }
 
