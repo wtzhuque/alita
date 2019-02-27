@@ -10,18 +10,24 @@
 
 namespace alita {
 
-Service::Service() {
+ServiceImpl::ServiceImpl() {
 }
 
-Service::~Service() {
+ServiceImpl::~ServiceImpl() {
 }
 
-int Service::init() {
+int ServiceImpl::init() {
 	return 0;
 }
 
-int Service::destroy() {
+int ServiceImpl::destroy() {
 	return 0;
+}
+
+void ServiceImpl::query(::google::protobuf::RpcController* controller,
+                        const ::alita::Request* request,
+                        ::alita::Response* response,
+                        ::google::protobuf::Closure* done) {
 }
 
 } // namespace alita

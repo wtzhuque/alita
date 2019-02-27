@@ -4,17 +4,26 @@
 // Description: Alita Service
 //**********************************************************
 
+#include "alita_service.pb.h"
+
 namespace alita {
 
-class Service {
+class ServiceImpl : public AlitaService {
 public:
-	Service();
+	ServiceImpl();
 
-	~Service();
+	~ServiceImpl();
 
 	int init();
 
 	int destroy();
-}; // class Service
+  
+	virtual void query(::google::protobuf::RpcController* controller,
+                       const ::alita::Request* request,
+                       ::alita::Response* response,
+                       ::google::protobuf::Closure* done);
+
+private:
+}; // class ServiceImpl
 
 } // namespace alita
