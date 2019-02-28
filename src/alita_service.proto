@@ -1,0 +1,16 @@
+package alita;
+
+option cc_generic_services = true;
+
+message Request {
+	required bytes msg = 1;
+};
+
+message Response {
+	required int32 error = 1;
+	required bytes msg = 2;
+};
+
+service AlitaService {
+	rpc query(Request) returns(Response);
+};

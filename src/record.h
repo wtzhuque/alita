@@ -1,17 +1,19 @@
 //**********************************************************
-// File: operator.h                                         
+// File: record.h                                         
 // Author: wtzhuque@163.com                               
-// Description: Operator
+// Description: Record
 //**********************************************************
 #pragma once
 
+#include "object.h"
+
 namespace alita {
 
-class Operator : public Object {
+class Record : public Object {
 public:
-	Operator() {}
+    Record();
 
-	virtual ~Operator() {}
-}; // class Operator
+	~Record();
+}; // class Record
 
 } // namespace alita

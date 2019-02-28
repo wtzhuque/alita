@@ -1,17 +1,17 @@
 //**********************************************************
-// File: operator.h                                         
+// File: generator.h                                         
 // Author: wtzhuque@163.com                               
-// Description: Operator
+// Description: Generator
 //**********************************************************
 #pragma once
 
 namespace alita {
 
-class Operator : public Object {
+class Generator : public Object {
 public:
-	Operator() {}
+	Generator() {}
 
-	virtual ~Operator() {}
-}; // class Operator
+	virtual ~Generator() {}
+}; // class Generator
 
 } // namespace alita

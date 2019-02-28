@@ -1,17 +1,13 @@
 //**********************************************************
-// File: operator.h                                         
+// File: column.h                                         
 // Author: wtzhuque@163.com                               
-// Description: Operator
+// Description: Object
 //**********************************************************
 #pragma once
 
 namespace alita {
 
-class Operator : public Object {
-public:
-	Operator() {}
-
-	virtual ~Operator() {}
-}; // class Operator
+class Column {
+}; // class Column
 
 } // namespace alita

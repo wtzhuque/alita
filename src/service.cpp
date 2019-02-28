@@ -34,6 +34,12 @@ void ServiceImpl::query(::google::protobuf::RpcController* cntl_base,
     brpc::Controller* cntl = static_cast<brpc::Controller*>(cntl_base);
 
 	Engine* engine = Engine::instance();
+	std::string* res = response->mutable_msg();
+	int ret = engine->handle(request->msg(), res);
+	if (ret != 0) {
+		LOG(WARNING) << "handle request failed";
+	}
+	response->set_error(ret);
 }
 
 } // namespace alita
