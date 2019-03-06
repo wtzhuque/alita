@@ -1,19 +1,17 @@
 //**********************************************************
-// File: table.h                                         
+// File: frame.cpp                                         
 // Author: wtzhuque@163.com                               
-// Description: Table
+// Description: Frame
 //**********************************************************
-#pragma once
 
-#include "tablebase.h"
+#include "frame.h"
 
 namespace alita {
 
-class Table : public TableBase {
-public:
-	Table();
+Frame::Frame() {
+}
 
-	virtual ~Table();
-}; // class Table
+Frame::~Frame() {
+}
 
 } // namespace alita

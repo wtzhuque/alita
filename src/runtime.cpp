@@ -1,19 +1,20 @@
 //**********************************************************
-// File: record.h                                         
+// File: runtime.cpp                                         
 // Author: wtzhuque@163.com                               
-// Description: Record
+// Description: Runtime Flow Implemention
 //**********************************************************
-#pragma once
 
-#include "object.h"
+#include "runtime.h"
 
 namespace alita {
 
-class Record : public Object {
-public:
-    Record();
+Runtime::Runtime() {
+}
 
-	virtual ~Record();
-}; // class Record
+Runtime::~Runtime() {
+}
+	
+void Runtime::clear() {
+}
 
 } // namespace alita

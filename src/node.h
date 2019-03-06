@@ -1,19 +1,21 @@
 //**********************************************************
-// File: operator.h                                         
+// File: node.h                                         
 // Author: wtzhuque@163.com                               
-// Description: Operator
+// Description: Process Node
 //**********************************************************
 #pragma once
 
 namespace alita {
 
-class Operator : public Object {
+class Node {
 public:
-	Operator() {}
+	Node();
 
-	virtual ~Operator() {}
+	~Node();
 
-	bool Run();
-}; // class Operator
+	int init();
+
+	int destroy();
+}; // class Node
 
 } // namespace alita

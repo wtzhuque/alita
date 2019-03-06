@@ -4,7 +4,7 @@
 // Description: Alita Service
 //**********************************************************
 
-#include "alita_service.pb.h"
+#include "idl/alita_service.pb.h"
 
 namespace alita {
 
@@ -22,8 +22,6 @@ public:
                        const ::alita::Request* request,
                        ::alita::Response* response,
                        ::google::protobuf::Closure* done);
-
-private:
 }; // class ServiceImpl
 
 } // namespace alita

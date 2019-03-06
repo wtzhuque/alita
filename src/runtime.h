@@ -1,19 +1,20 @@
 //**********************************************************
-// File: operator.h                                         
+// File: runtime.h                                         
 // Author: wtzhuque@163.com                               
-// Description: Operator
+// Description: Runtime Flow
 //**********************************************************
 #pragma once
 
 namespace alita {
 
-class Operator : public Object {
+class Runtime {
 public:
-	Operator() {}
+	Runtime();
 
-	virtual ~Operator() {}
+	~Runtime();
 
-	bool Run();
-}; // class Operator
+	void clear();
+private:
+}; // class Runtime
 
 } // namespace alita

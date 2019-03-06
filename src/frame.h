@@ -1,19 +1,19 @@
 //**********************************************************
-// File: operator.h                                         
+// File: frame.h                                         
 // Author: wtzhuque@163.com                               
-// Description: Operator
+// Description: Frame
 //**********************************************************
 #pragma once
 
+#include "tablebase.h"
+
 namespace alita {
 
-class Operator : public Object {
+class Frame : public TableBase {
 public:
-	Operator() {}
+	Frame();
 
-	virtual ~Operator() {}
-
-	bool Run();
-}; // class Operator
+	virtual ~Frame();
+}; // class Table
 
 } // namespace alita
